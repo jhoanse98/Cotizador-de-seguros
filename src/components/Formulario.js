@@ -26,6 +26,24 @@ const InputRadio = styled.input`
     margin: 0 1rem;
 `;
 
+const Boton = styled.button`
+    width: 100%;
+    background-color: #00838F;
+    padding: 1rem;
+    text-transform: uppercase;
+    font-size: 16px;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    transition: background-color .5s ease;
+    margin-top: 2rem;
+
+    &:hover{
+        cursor:pointer;
+        background-color:#26C6DA;
+    }
+`;
+
 const Formulario = () => {
     //En los input type "radio" 
     //deben tener el mismo name de tal manera
@@ -80,7 +98,7 @@ const Formulario = () => {
                 
             </Campo>
 
-            <button type="button">Cotizar</button>
+            <Boton type="button">Cotizar</Boton>
         </form>
       );
 }
