@@ -5,7 +5,7 @@ import Formulario from './components/Formulario';
 import styled from '@emotion/styled';
 
 const Contenedor = styled.div`
-  max-width: 400px;
+  max-width: 600px;
   margin: 0px auto;
 `;
 
