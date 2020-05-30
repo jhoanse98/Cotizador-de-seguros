@@ -44,6 +44,15 @@ const Boton = styled.button`
     }
 `;
 
+const Error = styled.div`
+    background-color: red;
+    width: 100%;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-bottom: 2rem;
+`;
+
 const Formulario = () => {
     //En los input type "radio" 
     //deben tener el mismo name de tal manera
@@ -57,6 +66,10 @@ const Formulario = () => {
         plan: "",
     });
 
+    //state para el error
+
+    const [error, actualizarError] = useState(false);
+
     const {marca, year, plan} = datos;
 
     const obtenerDatos = e => {
@@ -66,9 +79,41 @@ const Formulario = () => {
         })
     }
 
+    const handleChange= e => {
+        e.preventDefault();
+
+        //validar campos del formulario
+
+        if(marca.trim() === "" || year.trim() === "" || plan.trim() === "" ){
+            actualizarError(true);
+            return;
+        }
+
+        actualizarError(false);
+
+
+        //obtener la diferencvia de años
+        
+        //por cada año restarle el 3%
+
+        //incremento
+            //americano 15
+            //Asiático 5%
+            //Europeo 30%
+
+        //básico un 20%
+        //completo un 50%
+
+        //TOTAL
+    }
+
 
     return (
-        <form>
+        <form
+            onSubmit={handleChange}
+        >
+
+            {error ? <Error>Todos los campos son obligatorios</Error> : null}    
             <Campo>
                 <Label>Marca</Label>
                 <Select
@@ -128,7 +173,7 @@ const Formulario = () => {
                 
             </Campo>
 
-            <Boton type="button">Cotizar</Boton>
+            <Boton type="submit">Cotizar</Boton>
         </form>
       );
 }
