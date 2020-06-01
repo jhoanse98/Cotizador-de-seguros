@@ -20,7 +20,7 @@ const ContenedorFormulario = styled.div`
 function App() {
 
   const [resumen, guardarResumen] = useState({
-    cotizacion: '',
+    cotizacion: 0,
     datos: {
       marca:'',
       year: '',
