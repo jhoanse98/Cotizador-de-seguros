@@ -54,7 +54,7 @@ const Error = styled.div`
     margin-bottom: 2rem;
 `;
 
-const Formulario = ({guardarResumen}) => {
+const Formulario = ({guardarResumen, guardarCargando}) => {
     //En los input type "radio" 
     //deben tener el mismo name de tal manera
     //que solo se seleccione uno
@@ -117,12 +117,19 @@ const Formulario = ({guardarResumen}) => {
         //completo un 50%
         resultado = parseFloat(calcularPlan(plan) * resultado).toFixed(2);
         //TOTAL
-        console.log(resultado);
+        
+        guardarCargando(true)
 
-        guardarResumen({
-            cotizacion: resultado,
-            datos, //un objeto con la información del formulario
-        })
+        setTimeout(()=>{
+
+            guardarCargando(false);
+            guardarResumen({
+                cotizacion: resultado,
+                datos, //un objeto con la información del formulario
+            });
+
+        }, 3000);
+
     }
 
 
