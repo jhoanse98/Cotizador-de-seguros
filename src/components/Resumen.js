@@ -5,8 +5,9 @@ import {Mayuscula} from '../Helper';
 const ContenedorResumen = styled.div`
     padding: 1rem;
     text-align: center;
-    background-color: #008383;
+    background-color: #00838F;
     color: #fff;
+    margin-top: 1rem;
 `
 
 const Resumen = ({datos}) => {
