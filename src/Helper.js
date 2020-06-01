@@ -40,3 +40,13 @@ export function calcularPlan(plan){
     }
     return incremento;
 }
+
+
+//Función que cambia la primera letra de un texto en mayúscula
+
+export function Mayuscula(texto){
+    return texto.charAt(0).toUpperCase() + texto.slice(1);
+
+    //charAt toma el caracter que se le indique dentro de una cadena
+    //slice muestra el contenido de una cadena desde el índice que se le indique
+};
